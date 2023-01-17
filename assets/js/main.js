@@ -4,7 +4,7 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-(function() {
+(function () {
   "use strict";
 
   /**
@@ -90,7 +90,7 @@
   /**
    * Mobile nav toggle
    */
-  on('click', '.mobile-nav-toggle', function(e) {
+  on('click', '.mobile-nav-toggle', function (e) {
     select('body').classList.toggle('mobile-nav-active')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
@@ -99,7 +99,7 @@
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
-  on('click', '.scrollto', function(e) {
+  on('click', '.scrollto', function (e) {
     if (select(this.hash)) {
       e.preventDefault()
 
@@ -159,7 +159,7 @@
     new Waypoint({
       element: skilsContent,
       offset: '80%',
-      handler: function(direction) {
+      handler: function (direction) {
         let progress = select('.progress .progress-bar', true);
         progress.forEach((el) => {
           el.style.width = el.getAttribute('aria-valuenow') + '%'
@@ -180,9 +180,9 @@
 
       let portfolioFilters = select('#portfolio-flters li', true);
 
-      on('click', '#portfolio-flters li', function(e) {
+      on('click', '#portfolio-flters li', function (e) {
         e.preventDefault();
-        portfolioFilters.forEach(function(el) {
+        portfolioFilters.forEach(function (el) {
           el.classList.remove('filter-active');
         });
         this.classList.add('filter-active');
@@ -190,7 +190,7 @@
         portfolioIsotope.arrange({
           filter: this.getAttribute('data-filter')
         });
-        portfolioIsotope.on('arrangeComplete', function() {
+        portfolioIsotope.on('arrangeComplete', function () {
           AOS.refresh()
         });
       }, true);
@@ -275,7 +275,7 @@ window.addEventListener('load', function calculate() {
   var age = today.getFullYear() - birthday.getFullYear();
   var m = today.getMonth() - birthday.getMonth();
   if (m < 0 || (m === 0 && today.getDate() < birthday.getDate())) {
-      age--;
+    age--;
   }
   document.getElementById("age").innerHTML = age;
   element.setAttribute('data-purecounter-end', today.getFullYear() - "2020");
@@ -285,13 +285,13 @@ window.addEventListener('load', function calculate() {
 var button = document.getElementById("download-resume");
 
 // Add a click event listener to the button
-button.addEventListener("click", function() {
+button.addEventListener("click", function () {
   // Create a new anchor element
   var a = document.createElement("a");
-  
+
   // Set the href attribute to the PDF file URL
   a.href = "assets/pdf/resume.pdf";
-  
+
   // Set the download attribute to the desired file name
   a.download = "douglas_damiano_resume.pdf";
 
@@ -300,35 +300,4 @@ button.addEventListener("click", function() {
 
   // Click the anchor element
   a.click();
-});
-
-// Get the form element by its id
-var form = document.getElementById("contact-form");
-
-// Add a submit event listener to the form
-form.addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  // Get the form data
-  var formData = new FormData(form);
-
-  // Create a new XMLHttpRequest object
-  var xhr = new XMLHttpRequest();
-
-  // Set the request method and URL
-  xhr.open("POST", "forms/contact.php");
-
-  // Send the form data
-  xhr.send(formData);
-
-  // Handle the response
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      // Get the response text
-      var response = xhr.responseText;
-
-      // Handle the response here (e.g. display a message to the user)
-      alert(response);
-    }
-  };
 });
