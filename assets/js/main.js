@@ -302,7 +302,7 @@ docDownloadButton.addEventListener("click", function() {
   // create the a element
   const a = document.createElement("a");
   a.href = link;
-  a.download = "douglas_damiano_backend_developer_resume.doc";
+  a.download = "douglas_damiano_backend_developer_resume.docx";
   a.target = "_blank";
   a.click();
 });
