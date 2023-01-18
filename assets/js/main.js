@@ -298,7 +298,7 @@ pdfDownloadButton.addEventListener("click", function() {
 const docDownloadButton = document.getElementById("doc");
 docDownloadButton.addEventListener("click", function() {
   // set the link to your doc file
-  const link = "assets/resume/resume.doc";
+  const link = "assets/resume/resume.docx";
   // create the a element
   const a = document.createElement("a");
   a.href = link;
