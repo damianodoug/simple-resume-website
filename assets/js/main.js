@@ -281,23 +281,28 @@ window.addEventListener('load', function calculate() {
   element.setAttribute('data-purecounter-end', today.getFullYear() - "2020");
 });
 
-// Get the button element by its id
-var button = document.getElementById("download-resume");
-
-// Add a click event listener to the button
-button.addEventListener("click", function () {
-  // Create a new anchor element
-  var a = document.createElement("a");
-
-  // Set the href attribute to the PDF file URL
-  a.href = "assets/pdf/resume.pdf";
-
-  // Set the download attribute to the desired file name
-  a.download = "douglas_damiano_resume.pdf";
-
-  // Set the target attribute to "_blank" to open the PDF in a new tab
+// create the pdf download button
+const pdfDownloadButton = document.getElementById("pdf");
+pdfDownloadButton.addEventListener("click", function() {
+  // set the link to your pdf file
+  const link = "assets/resume/resume.pdf";
+  // create the a element
+  const a = document.createElement("a");
+  a.href = link;
+  a.download = "douglas_damiano_backend_developer_resume.pdf";
   a.target = "_blank";
+  a.click();
+});
 
-  // Click the anchor element
+// create the doc download button
+const docDownloadButton = document.getElementById("doc");
+docDownloadButton.addEventListener("click", function() {
+  // set the link to your doc file
+  const link = "assets/resume/resume.doc";
+  // create the a element
+  const a = document.createElement("a");
+  a.href = link;
+  a.download = "douglas_damiano_backend_developer_resume.doc";
+  a.target = "_blank";
   a.click();
 });
